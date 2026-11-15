@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:00:00Z",
+  "title": "Design System: Redline",
+  "extensions": {
+    "colorMeta": {
+      "red": { "role": "primary", "displayName": "Proof Red", "canonical": "#c01f1f", "tonalRamp": ["#3a0808", "#5a0e0e", "#7a1414", "#9a1a1a", "#c01f1f", "#d55a5a", "#e89a9a", "#f6d6d6"] },
+      "red-deep": { "role": "primary", "displayName": "Proof Red Deep", "canonical": "#8a1616", "tonalRamp": ["#2c0707", "#450b0b", "#5f0f0f", "#78130f", "#8a1616", "#b85050", "#dc9494", "#f3d4d4"] },
+      "blue": { "role": "secondary", "displayName": "Gap Blue", "canonical": "#1f4e79", "tonalRamp": ["#0a1826", "#102638", "#17384f", "#1a4365", "#1f4e79", "#4f789e", "#8caac5", "#cdddea"] },
+      "blue-ink": { "role": "secondary", "displayName": "Gap Blue Ink", "canonical": "#193f63", "tonalRamp": ["#081220", "#0d1e30", "#122c45", "#163656", "#193f63", "#4a6d8e", "#89a4bd", "#cbd9e6"] },
+      "amber": { "role": "tertiary", "displayName": "Caution Amber", "canonical": "#7a4f0c", "tonalRamp": ["#2a1b04", "#3f2906", "#553708", "#6a450a", "#7a4f0c", "#a8803f", "#cdb181", "#eadfc8"] },
+      "paper": { "role": "neutral", "displayName": "Manila Paper", "canonical": "#e7e0d0", "tonalRamp": ["#2e2a20", "#4a4433", "#6a6249", "#8f8767", "#b4ab88", "#cdc3a4", "#e7e0d0", "#f4efe2"] },
+      "paper-2": { "role": "neutral", "displayName": "Lifted Sheet", "canonical": "#efe9da", "tonalRamp": ["#322e22", "#4e4836", "#6e664c", "#938a68", "#bab08c", "#d6ccae", "#efe9da", "#f8f4ea"] },
+      "paper-3": { "role": "neutral", "displayName": "Brightest Card", "canonical": "#f4efe2", "tonalRamp": ["#34301f", "#524b31", "#736a46", "#998f60", "#c0b589", "#ddd3ad", "#f4efe2", "#fbf8f0"] },
+      "edge": { "role": "neutral", "displayName": "Edge", "canonical": "#d4cab0", "tonalRamp": ["#2d2a1e", "#474230", "#665f44", "#8a8160", "#aea585", "#c4b99a", "#d4cab0", "#ece6d6"] },
+      "rule": { "role": "neutral", "displayName": "Rule", "canonical": "#cabd9f", "tonalRamp": ["#2b281c", "#44402d", "#625c41", "#847c58", "#a89d76", "#bbac8a", "#cabd9f", "#e4dcc8"] },
+      "ink": { "role": "neutral", "displayName": "Typewriter Ink", "canonical": "#1a1a17", "tonalRamp": ["#1a1a17", "#302f2a", "#4a483f", "#6a6659", "#8f8a78", "#b4af9c", "#d8d3c3", "#f0ece0"] },
+      "ink-2": { "role": "neutral", "displayName": "Warm Secondary Ink", "canonical": "#574f3d", "tonalRamp": ["#1f1c15", "#332f24", "#474133", "#574f3d", "#7a7058", "#a2977b", "#c7bda3", "#e9e2d1"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero and closing headlines, struck in typewriter mono; the one word that costs you is set in Proof Red." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings in the worksheet and errata (heavy serif)." },
+      "title": { "displayName": "Title", "purpose": "The specimen finding name — the clause under examination." },
+      "body": { "displayName": "Body", "purpose": "Running prose in Spectral serif; caps ~46-52ch." },
+      "document": { "displayName": "Document", "purpose": "The contract's own words — galley text, cited sentence, counter-offer — in Courier Prime." },
+      "label": { "displayName": "Label", "purpose": "Letterpress small-caps: stamps, tabs, tier chips, nav links, CTAs, field keys." },
+      "pen": { "displayName": "Pen", "purpose": "Margin correction marks only, in the Caveat red pen hand, rotated a few degrees." }
+    },
+    "shadows": [
+      { "name": "lifted-sheet", "value": "0 30px 60px -28px rgba(26,22,15,.55), 0 2px 0 rgba(255,255,255,.4) inset", "purpose": "The galley proof panel — far soft warm cast plus a faint top-edge highlight." },
+      { "name": "specimen-lift", "value": "0 26px 54px -30px rgba(26,22,15,.5)", "purpose": "The specimen card — the same soft warm cast, slightly lighter." },
+      { "name": "stamp-press", "value": "0 10px 24px -12px rgba(138,22,22,.75)", "purpose": "Red CTA stamp at rest — a tinted red shadow." },
+      { "name": "stamp-press-hover", "value": "0 16px 30px -12px rgba(138,22,22,.8)", "purpose": "Red CTA stamp on hover — the red shadow deepens as the stamp lifts." }
+    ],
+    "motion": [
+      { "name": "pen-strike", "value": "transform scaleX(0)->scaleX(1) over .7s at .5s cubic-bezier(.2,.8,.2,1)", "purpose": "The red strike pulled across the dangerous word in the hero headline." },
+      { "name": "pen-circle", "value": "stroke-dashoffset 440->0 over 1.1s at .9s cubic-bezier(.3,.7,.2,1)", "purpose": "The red pen drawing the circle around the flagged line in the galley." },
+      { "name": "mark-fadein", "value": "opacity 0->1 over .35-.4s (delete-mark .5s, pen-flag 1.7s)", "purpose": "Margin pen-flags and the delete mark settling in after the circle is drawn." },
+      { "name": "ease-lift", "value": "cubic-bezier(.2,.8,.2,1)", "purpose": "Default easing for the CTA stamp lift and the authored pen moments." }
+    ],
+    "breakpoints": [
+      { "name": "lap", "value": "900px" },
+      { "name": "phone", "value": "560px" }
+    ],
+    "reducedMotion": "prefers-reduced-motion:reduce disables all animation; the strike settles to scaleX(1) and the circle to stroke-dashoffset:0 at their finished state."
+  },
+  "components": [
+    {
+      "name": "Primary Button (Proof Stamp)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The red proof-stamp CTA; the one place red fills a surface, because the CTA is itself a danger stamp.",
+      "html": "<a class=\"ds-cta\" href=\"#start\">Mark up my contract <svg class=\"ds-cta-arw\" viewBox=\"0 0 18 12\" aria-hidden=\"true\"><path d=\"M1 6h15M11 1l5 5-5 5\"/></svg></a>",
+      "css": ".ds-cta{font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--paper-3,#f4efe2);background:var(--red,#c01f1f);padding:13px 22px;border:1.5px solid var(--red-deep,#8a1616);display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;border-radius:0;box-shadow:0 10px 24px -12px rgba(138,22,22,.75);transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s}.ds-cta:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(138,22,22,.8)}.ds-cta:active{transform:translateY(0)}.ds-cta:focus-visible{outline:2.5px solid var(--red,#c01f1f);outline-offset:3px}.ds-cta-arw{width:18px;height:12px;stroke:var(--paper-3,#f4efe2);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "button-copy",
+      "description": "Secondary action to copy a counter-offer; outlined in ink, inverts to ink fill on hover.",
+      "html": "<button class=\"ds-copy\" type=\"button\">Copy counter-offer</button>",
+      "css": ".ds-copy{background:transparent;border:1.5px solid var(--ink,#1a1a17);color:var(--ink,#1a1a17);font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.12em;text-transform:uppercase;font-size:12px;padding:9px 16px;cursor:pointer;border-radius:0;transition:background .15s,color .15s}.ds-copy:hover{background:var(--ink,#1a1a17);color:var(--paper-3,#f4efe2)}.ds-copy:focus-visible{outline:2.5px solid var(--red,#c01f1f);outline-offset:3px}"
+    },
+    {
+      "name": "Tier Chip",
+      "kind": "chip",
+      "refersTo": "chip-tier",
+      "description": "Outline-only tier marker; color is the signal (Critical red, Caution amber, Gap blue).",
+      "html": "<span class=\"ds-tier ds-tier-critical\">Critical</span> <span class=\"ds-tier ds-tier-caution\">Caution</span> <span class=\"ds-tier ds-tier-gap\">Gap</span>",
+      "css": ".ds-tier{font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding:4px 8px;border:1.3px solid currentColor;white-space:nowrap;border-radius:0;background:transparent}.ds-tier-critical{color:var(--red,#c01f1f)}.ds-tier-caution{color:var(--amber,#7a4f0c)}.ds-tier-gap{color:var(--blue,#1f4e79)}"
+    },
+    {
+      "name": "Proof Stamp Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "A letterpress small-caps stamp pressed onto the page, rotated -2deg with an inset ring.",
+      "html": "<span class=\"ds-stamp\">Sample contract</span>",
+      "css": ".ds-stamp{font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--red,#c01f1f);border:1.5px solid var(--red,#c01f1f);padding:5px 10px;display:inline-block;transform:rotate(-2deg);box-shadow:inset 0 0 0 1px rgba(192,31,31,.25)}"
+    },
+    {
+      "name": "Specimen Card",
+      "kind": "card",
+      "refersTo": "card-specimen",
+      "description": "The product's working surface: a tier band, the cited source sentence in a color-keyed quote block, the effect, and a paste-ready counter-offer.",
+      "html": "<article class=\"ds-specimen\"><div class=\"ds-band\"><span>Critical</span><span class=\"ds-verdict\">Walk away — don't sign without changing this</span></div><div class=\"ds-body\"><p class=\"ds-sci\">The flagship harm for anyone who makes IP</p><h3 class=\"ds-name\">Broad IP assignment</h3><div class=\"ds-field\"><div class=\"ds-k\">The sentence it came from</div><p class=\"ds-quote\">“Contractor hereby assigns all intellectual property, whether created before or during the engagement, to the Client.”</p></div><div class=\"ds-field ds-counter\"><div class=\"ds-k ds-k-blue\">Counter-offer you can paste</div><p class=\"ds-counter-tx\">“Contractor assigns only the deliverables created specifically for this project.”</p><button class=\"ds-copy\" type=\"button\">Copy counter-offer</button></div></div></article>",
+      "css": ".ds-specimen{background:var(--paper-3,#f4efe2);border:1px solid var(--edge,#d4cab0);border-radius:0;box-shadow:0 26px 54px -30px rgba(26,22,15,.5)}.ds-band{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:var(--red,#c01f1f);color:var(--paper-3,#f4efe2);font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.18em;text-transform:uppercase;font-size:13px}.ds-verdict{font-size:12px;opacity:.92}.ds-body{padding:26px 28px 30px}.ds-sci{font-family:\"Spectral\",Georgia,serif;font-style:italic;color:var(--ink-2,#574f3d);font-size:1rem}.ds-name{font-family:\"Spectral\",Georgia,serif;font-weight:800;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1;margin:4px 0 20px}.ds-field{margin-bottom:22px}.ds-k{font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--ink-2,#574f3d);margin-bottom:8px}.ds-k-blue{color:var(--blue-ink,#193f63)}.ds-quote{font-family:\"Courier Prime\",monospace;font-size:1rem;line-height:1.7;color:var(--ink,#1a1a17);border-left:3px solid var(--red,#c01f1f);padding:4px 0 4px 18px;background:rgba(192,31,31,.045)}.ds-counter{background:var(--paper,#e7e0d0);border:1px dashed var(--rule,#cabd9f);padding:16px 18px;margin-top:4px}.ds-counter-tx{font-family:\"Courier Prime\",monospace;font-size:.95rem;line-height:1.65}"
+    },
+    {
+      "name": "Galley Proof",
+      "kind": "custom",
+      "refersTo": "typography.document",
+      "description": "A lifted manila sheet with a ruled line-number margin (decimal-leading-zero), the dangerous line circled in proof-red, and a letterpress tab pinned to its edge.",
+      "html": "<figure class=\"ds-galley\"><span class=\"ds-tab\">Galley proof</span><div class=\"ds-proof\"><div class=\"ds-row\"><span class=\"ds-ln\"></span><span class=\"ds-tx\">4. ASSIGNMENT OF WORK. Contractor shall perform the</span></div><div class=\"ds-row ds-flag\"><span class=\"ds-ln\"></span><span class=\"ds-tx\"><mark class=\"ds-mark\">Contractor hereby assigns all intellectual property,</mark><svg class=\"ds-circle\" viewBox=\"0 0 150 46\" aria-hidden=\"true\"><ellipse cx=\"75\" cy=\"23\" rx=\"71\" ry=\"20\"/></svg></span></div></div></figure>",
+      "css": ".ds-galley{position:relative;background:var(--paper-2,#efe9da);border:1px solid var(--edge,#d4cab0);border-radius:0;box-shadow:0 30px 60px -28px rgba(26,22,15,.55),0 2px 0 rgba(255,255,255,.4) inset;padding:22px 26px 26px 0}.ds-tab{position:absolute;top:-13px;left:26px;background:var(--ink,#1a1a17);color:var(--paper-3,#f4efe2);font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;padding:5px 12px}.ds-proof{font-family:\"Courier Prime\",monospace;font-size:14.5px;line-height:1.95;color:var(--ink,#1a1a17);counter-reset:ln}.ds-row{display:grid;grid-template-columns:52px 1fr;align-items:baseline;position:relative}.ds-ln{counter-increment:ln;text-align:right;padding-right:16px;color:var(--ink-2,#574f3d);border-right:1px solid var(--rule,#cabd9f);margin-right:16px;user-select:none;font-size:12px}.ds-ln::before{content:counter(ln,decimal-leading-zero)}.ds-mark{background:transparent;color:var(--ink,#1a1a17);box-shadow:inset 0 -9px 0 rgba(192,31,31,.14)}.ds-circle{position:absolute;right:-10px;top:-6px;width:150px;height:46px;pointer-events:none}.ds-circle ellipse{stroke:var(--red,#c01f1f);stroke-width:2.6;fill:none;stroke-dasharray:440;stroke-dashoffset:0}"
+    },
+    {
+      "name": "Finding List Item",
+      "kind": "nav",
+      "refersTo": "typography.body",
+      "description": "An ARIA tablist row; selected state lifts to the sheet tone, grows a left bar (red, or blue for a Gap), and recolors its name.",
+      "html": "<ul class=\"ds-flaglist\"><li><button class=\"ds-flag-btn\" aria-selected=\"true\"><span class=\"ds-no\">01</span><span class=\"ds-nm\">Broad IP assignment</span><span class=\"ds-tier ds-tier-critical\">Critical</span></button></li><li><button class=\"ds-flag-btn ds-is-gap\" aria-selected=\"false\"><span class=\"ds-no\">—</span><span class=\"ds-nm\">No kill fee</span><span class=\"ds-tier ds-tier-gap\">Gap</span></button></li></ul>",
+      "css": ".ds-flaglist{list-style:none;border-top:2px solid var(--ink,#1a1a17);margin:0;padding:0}.ds-flaglist li{border-bottom:1px solid var(--rule,#cabd9f);position:relative}.ds-flag-btn{width:100%;text-align:left;background:transparent;border:0;cursor:pointer;display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:14px;padding:16px 8px 16px 4px;color:var(--ink,#1a1a17);transition:background .15s}.ds-flag-btn:hover{background:rgba(26,22,15,.04)}.ds-no{font-family:\"Courier Prime\",monospace;font-size:13px;color:var(--ink-2,#574f3d)}.ds-nm{font-family:\"Spectral\",Georgia,serif;font-size:1.08rem;font-weight:600;line-height:1.25}.ds-tier{font-family:\"Spectral SC\",\"Spectral\",serif;letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding:4px 8px;border:1.3px solid currentColor;white-space:nowrap}.ds-tier-critical{color:var(--red,#c01f1f)}.ds-tier-gap{color:var(--blue,#1f4e79)}.ds-flag-btn[aria-selected=\"true\"]{background:var(--paper-2,#efe9da)}.ds-flag-btn[aria-selected=\"true\"] .ds-nm{color:var(--red-deep,#8a1616)}.ds-flag-btn[aria-selected=\"true\"]::before{content:\"\";position:absolute;left:0;width:4px;top:0;bottom:0;background:var(--red,#c01f1f)}.ds-flag-btn.ds-is-gap[aria-selected=\"true\"]::before{background:var(--blue,#1f4e79)}.ds-flag-btn.ds-is-gap[aria-selected=\"true\"] .ds-nm{color:var(--blue-ink,#193f63)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Marked Galley Proof",
+    "overview": "Redline is a proofreader's red pen taken to the contract a client just handed you. The page is not a product tour or a dashboard; it is a sheet of manila proofing paper with a ruled margin, typewriter ink, and correction marks made by hand in the margin. The manila field (#e7e0d0) owns every surface — it is the page, not a background behind cards. Depth comes from lifting a sheet slightly brighter than the one beneath it, never from a slab of color dropped onto white. The system refuses two defaults it was built against: the legaltech-SaaS look (navy gradient, floating app screenshot, \"AI-powered\" badge) and the cream-serif law-firm look. Everything here reads as a physical artifact being corrected. Color is load-bearing, not decorative: a red mark on this page always means a clause that can hurt you; it is never used to brighten a button or draw an idle eye. That restraint is the product's credibility expressed as a palette rule.",
+    "keyCharacteristics": [
+      "Manila proofing paper is the field; sheets lift by tone, never by shadow-on-white.",
+      "Hard corners everywhere (0 radius); the artifact is cut and stamped, not rounded.",
+      "Typewriter mono display headlines; serif body; letterpress small-caps labels; a red pen hand for margin marks.",
+      "One authored motion moment: the red pen circling and striking the dangerous line.",
+      "Semantic color is an invariant: red = danger, blue = a missing protection, amber = bounded caution."
+    ],
+    "rules": [
+      { "name": "The Red-Means-Danger Rule", "body": "Red (#c01f1f / #8a1616) is reserved for danger only — Critical findings, the Walk-away verdict, and proof marks. It never decorates a surface, a hover, or a non-danger CTA's background for decoration's sake. If a red element does not mean \"this can hurt you,\" it is wrong. Audit test: every red pixel on a screen must trace to a Critical/Walk-away finding or a proof mark.", "section": "colors" },
+      { "name": "The Three-Signal Rule", "body": "The three correction colors are a fixed semantic triad: red = danger, blue = a missing protection (Gap), amber = bounded caution. A finding's color is decided by its meaning, never by visual balance. Never recolor a tier to even out a layout.", "section": "colors" },
+      { "name": "The Warm-Neutral Rule", "body": "Secondary text is warm ink (#574f3d), never a cool gray. The page is aged paper; a gray would read as screen chrome and break the artifact.", "section": "colors" },
+      { "name": "The Document-Voice Rule", "body": "Courier Prime is reserved for two jobs: typewriter display headlines, and anything that is literally the document's own words (the galley text, the cited sentence, the counter-offer). Never set running prose in mono — that is Spectral's job.", "section": "typography" },
+      { "name": "The Pen-Hand Rule", "body": "Caveat (the red pen hand) appears only as a margin correction mark. It is never used for a heading, a label, or body copy; it is the human hand writing in the margin, and overusing it dissolves that meaning.", "section": "typography" },
+      { "name": "The Tonal-Lift Rule", "body": "Surfaces separate by paper tone first; shadow is only for the two hero objects (the galley and the specimen). Do not reach for a shadow where a brighter sheet tone will read the layer.", "section": "elevation" },
+      { "name": "The Soft-Shadow Rule", "body": "Shadows are soft, warm, and far-cast (large blur, negative spread). No hard zero-blur offset shadows — the hard edges live in the corners and borders, not the shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep red (#c01f1f) for danger only — Critical findings, the Walk-away verdict, and proof marks. The primary CTA is the sole red-filled surface, and only because it is itself a danger stamp.",
+      "Do separate layers by paper tone first (#e7e0d0 → #efe9da → #f4efe2), reaching for a soft warm shadow only on the galley and specimen hero objects.",
+      "Do set the document's own words — galley text, cited sentences, counter-offers — in Courier Prime, and running prose in Spectral.",
+      "Do draw proof marks as authored SVG sharing one pen weight (stroke-width 2.4, round caps/joins), so every red mark looks made by one pen.",
+      "Do cut corners square (0 radius) and define containers with hairline or dashed rules.",
+      "Do honor prefers-reduced-motion: the circle and strike settle to their finished state with no animation."
+    ],
+    "donts": [
+      "Don't use red to brighten a button background, a hover, a divider, or any element that does not mean \"this can hurt you.\"",
+      "Don't recolor a finding's tier (red/amber/blue) to balance a layout — the color is fixed by meaning.",
+      "Don't use a cool gray for secondary text or borders; the neutrals are warm paper tones (warm secondary ink #574f3d).",
+      "Don't add hard zero-blur offset shadows; shadows stay soft and far-cast even though corners are hard. This is not a neobrutalist world.",
+      "Don't set running prose in Courier Prime, or use the Caveat pen hand for anything but a margin correction mark.",
+      "Don't round corners or drop a colored card onto a white field — the manila paper is the page."
+    ]
+  }
+}

@@ -45,6 +45,10 @@ in this list.
 - Credentials live in .env.local, which is gitignored. Never commit a secret —
   a key is public the moment it is pushed and then has to be rotated.
 - Ask me before adding any dependency.
+- All copy a user reads in this product, meaning the landing page, UI labels,
+  error messages and empty states, has to be run through the humanizer skill
+  before it is committed. Copy that reads as though a model wrote it is a defect,
+  not a matter of taste.
 
 ## Read before you act
 

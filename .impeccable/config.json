@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/sketches/assigned.html"
+        ],
+        "createdAt": "2026-11-11T19:41:49.274Z",
+        "reason": "decision-round sketch fixture, not shipping UI; page renders sub-22px text as bars"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/sketches/pick.html"
+        ],
+        "createdAt": "2026-11-11T19:41:49.312Z",
+        "reason": "decision-round sketch fixture, not shipping UI; page renders sub-22px text as bars"
+      },
+      {
+        "rule": "tiny-text",
+        "value": "*",
+        "files": [
+          ".impeccable/sketches/pick.html"
+        ],
+        "createdAt": "2026-11-11T19:41:49.354Z",
+        "reason": "decision-round sketch fixture, not shipping UI; legend text is illustrative only"
+      }
+    ]
+  }
+}

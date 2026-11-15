@@ -1,0 +1,239 @@
+/* Redline — landing. World: proofreader's marked galley proof.
+   Manila proofing paper owns the page; one proof-red reserved strictly for
+   danger, one proof-blue for a missing protection. Red never decorates. */
+
+:root{
+  --paper:#e7e0d0;      /* manila galley */
+  --paper-2:#efe9da;    /* lifted proof sheet */
+  --paper-3:#f4efe2;    /* brightest card */
+  --edge:#d4cab0;
+  --rule:#cabd9f;       /* ruled lines, margins */
+  --ink:#1a1a17;        /* typewriter ink */
+  --ink-2:#574f3d;      /* secondary, warm — never gray */
+  --red:#c01f1f;        /* DANGER ONLY: Critical / Walk-away / marks */
+  --red-deep:#8a1616;
+  --blue:#1f4e79;       /* a missing protection (Gap) */
+  --blue-ink:#193f63;
+  --amber:#7a4f0c;      /* Caution — adverse but bounded (never red) */
+
+  --doc:"Courier Prime","Courier New",monospace;
+  --prose:"Spectral",Georgia,"Times New Roman",serif;
+  --label:"Spectral SC","Spectral",serif;
+  --pen:"Caveat","Segoe Script",cursive;
+
+  --mx:clamp(20px,5vw,88px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--prose);
+  font-size:18px;
+  line-height:1.62;
+  /* warm light falling across the proofing paper */
+  background-image:radial-gradient(130% 70% at 50% -10%,rgba(201,189,160,.5),transparent 60%);
+  overflow-x:hidden;
+}
+
+/* --- browser surfaces themed from the palette --- */
+::selection{background:rgba(192,31,31,.22);color:var(--ink);}
+:focus-visible{outline:2.5px solid var(--red);outline-offset:3px;}
+html{caret-color:var(--red);}
+::-webkit-scrollbar{width:12px;height:12px;}
+::-webkit-scrollbar-track{background:var(--paper);}
+::-webkit-scrollbar-thumb{background:var(--edge);border:3px solid var(--paper);border-radius:0;}
+::-webkit-scrollbar-thumb:hover{background:var(--ink-2);}
+
+/* --- shared --- */
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--mx);}
+.label{font-family:var(--label);letter-spacing:.26em;text-transform:uppercase;font-size:13px;color:var(--ink-2);}
+.stamp{
+  font-family:var(--label);letter-spacing:.18em;text-transform:uppercase;
+  font-size:12px;color:var(--red);border:1.5px solid var(--red);
+  padding:5px 10px;display:inline-block;transform:rotate(-2deg);
+  box-shadow:inset 0 0 0 1px rgba(192,31,31,.25);
+}
+a{color:inherit;}
+
+/* proof marks (authored SVG) share one pen weight */
+.mark-svg{display:inline-block;vertical-align:middle;stroke:var(--red);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+.mark-svg.blue{stroke:var(--blue);}
+
+/* --- masthead --- */
+.masthead{position:relative;z-index:5;}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:22px;}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--label);font-weight:600;letter-spacing:.34em;font-size:21px;text-transform:uppercase;}
+.brand .nib{width:26px;height:26px;}
+.brand .nib path{stroke:var(--red);stroke-width:2.4;fill:none;stroke-linecap:round;}
+.nav{display:flex;align-items:center;gap:28px;}
+.nav a.txt{font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--ink-2);text-decoration:none;padding-bottom:2px;border-bottom:1.5px solid transparent;transition:border-color .2s,color .2s;}
+.nav a.txt:hover{color:var(--ink);border-color:var(--red);}
+
+/* --- primary action (a red proof stamp) --- */
+.cta{
+  --cta-bg:var(--red);
+  font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:14px;
+  color:var(--paper-3);background:var(--cta-bg);
+  padding:13px 22px;border:1.5px solid var(--red-deep);
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;
+  box-shadow:0 10px 24px -12px rgba(138,22,22,.75);
+  transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(138,22,22,.8);}
+.cta:active{transform:translateY(0);}
+.cta .arw{width:18px;height:12px;}
+.cta .arw path{stroke:var(--paper-3);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+/* --- hero --- */
+.hero{position:relative;padding-top:40px;padding-bottom:84px;}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1.08fr);gap:clamp(28px,4vw,64px);align-items:center;}
+.hero .pitch{max-width:none;}
+.hero h1{
+  font-family:var(--doc);font-weight:700;
+  font-size:clamp(1.95rem,3.4vw,3.25rem);line-height:1.1;letter-spacing:-0.02em;
+  color:var(--ink);
+}
+.hero h1 .cut{position:relative;white-space:nowrap;}
+.hero h1 .cut::after{content:"";position:absolute;left:-2px;right:-2px;top:54%;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;animation:strike .7s .5s cubic-bezier(.2,.8,.2,1) forwards;}
+.hero h1 .ink-red{color:var(--red);}
+.hero .sub{font-family:var(--prose);font-size:clamp(1.05rem,1.4vw,1.28rem);line-height:1.56;color:var(--ink-2);margin-top:26px;max-width:46ch;}
+.hero .act{margin-top:34px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
+.hero .priv{font-family:var(--label);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;color:var(--ink-2);display:flex;align-items:center;gap:8px;}
+.hero .priv svg{width:15px;height:15px;stroke:var(--ink-2);stroke-width:2;fill:none;}
+
+@keyframes strike{to{transform:scaleX(1);}}
+
+/* --- the galley proof (hero right) --- */
+.galley{position:relative;background:var(--paper-2);border:1px solid var(--edge);
+  box-shadow:0 30px 60px -28px rgba(26,22,15,.55),0 2px 0 rgba(255,255,255,.4) inset;
+  padding:22px 26px 26px 0;}
+.galley .tab{position:absolute;top:-13px;left:26px;background:var(--ink);color:var(--paper-3);font-family:var(--label);letter-spacing:.2em;text-transform:uppercase;font-size:11px;padding:5px 12px;}
+.galley .sample{position:absolute;top:-13px;right:18px;background:var(--paper-3);border:1px solid var(--edge);color:var(--ink-2);font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding:5px 10px;}
+.proof{font-family:var(--doc);font-size:14.5px;line-height:1.95;color:var(--ink);counter-reset:ln;}
+.proof .row{display:grid;grid-template-columns:52px 1fr;align-items:baseline;position:relative;}
+.proof .ln{counter-increment:ln;text-align:right;padding-right:16px;color:var(--ink-2);border-right:1px solid var(--rule);margin-right:16px;user-select:none;font-size:12px;}
+.proof .ln::before{content:counter(ln,decimal-leading-zero);}
+.proof .tx{padding-right:6px;}
+.proof .faded{color:#5f5744;}
+/* flagged line */
+.proof .row.flag .tx{cursor:pointer;}
+.proof .row.flag .tx mark{background:transparent;color:var(--ink);box-decoration-break:clone;}
+.proof .row.flag.crit .tx mark{box-shadow:inset 0 -9px 0 rgba(192,31,31,.14);}
+.proof .circle{position:absolute;right:-10px;top:-6px;width:150px;height:46px;pointer-events:none;}
+.proof .circle ellipse{stroke:var(--red);stroke-width:2.6;fill:none;stroke-dasharray:440;stroke-dashoffset:440;animation:draw 1.1s .9s cubic-bezier(.3,.7,.2,1) forwards;}
+.proof .pen-flag{position:absolute;right:16px;font-family:var(--pen);font-size:21px;color:var(--red);transform:rotate(-4deg);opacity:0;animation:fadein .4s 1.7s forwards;}
+.proof .pen-flag.blue{color:var(--blue);}
+.proof .delete-mark{position:absolute;left:-2px;width:22px;height:20px;opacity:0;animation:fadein .35s 1.5s forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@keyframes fadein{to{opacity:1;}}
+
+/* legend under the fold */
+.legend{display:flex;gap:30px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px dashed var(--rule);}
+.legend .item{display:flex;align-items:center;gap:10px;font-family:var(--label);letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--ink-2);}
+.legend .swatch{width:22px;height:22px;display:grid;place-items:center;}
+.legend .swatch svg{width:20px;height:16px;}
+
+/* --- worksheet: the product working (select a flag, read its proof) --- */
+.work{padding:78px 0;border-top:1px solid var(--edge);background:
+  linear-gradient(180deg,rgba(244,239,226,.5),transparent 40%);}
+.sec-head{margin-bottom:38px;max-width:60ch;}
+.sec-head h2{font-family:var(--prose);font-weight:800;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.1;letter-spacing:-0.01em;}
+.sec-head p{color:var(--ink-2);margin-top:14px;font-size:1.1rem;max-width:52ch;}
+.work .grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(22px,3vw,44px);align-items:start;}
+
+.flaglist{list-style:none;border-top:2px solid var(--ink);}
+.flaglist li{border-bottom:1px solid var(--rule);}
+.flaglist button{width:100%;text-align:left;background:transparent;border:0;cursor:pointer;
+  display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:14px;
+  padding:16px 8px 16px 4px;font-family:inherit;color:var(--ink);transition:background .15s;}
+.flaglist button:hover{background:rgba(26,22,15,.04);}
+.flaglist .no{font-family:var(--doc);font-size:13px;color:var(--ink-2);}
+.flaglist .nm{font-family:var(--prose);font-size:1.08rem;font-weight:600;line-height:1.25;}
+.flaglist .tier{font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding:4px 8px;border:1.3px solid currentColor;white-space:nowrap;}
+.tier.critical{color:var(--red);} .tier.caution{color:var(--amber);} .tier.gap{color:var(--blue);}
+.flaglist button[aria-selected="true"]{background:var(--paper-2);}
+.flaglist button[aria-selected="true"] .nm{color:var(--red-deep);}
+.flaglist button[aria-selected="true"]::before{content:"";position:absolute;left:0;width:4px;top:0;bottom:0;background:var(--red);}
+.flaglist li{position:relative;}
+.flaglist button.is-gap[aria-selected="true"]::before{background:var(--blue);}
+.flaglist button.is-gap[aria-selected="true"] .nm{color:var(--blue-ink);}
+
+/* the specimen card */
+.specimen{background:var(--paper-3);border:1px solid var(--edge);
+  box-shadow:0 26px 54px -30px rgba(26,22,15,.5);}
+.specimen .band{display:flex;align-items:center;justify-content:space-between;
+  padding:14px 22px;background:var(--red);color:var(--paper-3);
+  font-family:var(--label);letter-spacing:.18em;text-transform:uppercase;font-size:13px;}
+.specimen.is-gap .band{background:var(--blue);}
+.specimen.is-caution .band{background:var(--amber);}
+.specimen .band .verdict{font-size:12px;opacity:.92;}
+.specimen .body{padding:26px 28px 30px;}
+.specimen .sci{font-family:var(--prose);font-style:italic;color:var(--ink-2);font-size:1rem;}
+.specimen .name{font-family:var(--prose);font-weight:800;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1;margin:4px 0 20px;}
+.specimen .field{margin-bottom:22px;}
+.specimen .field .k{font-family:var(--label);letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--ink-2);margin-bottom:8px;}
+.specimen .quote{font-family:var(--doc);font-size:1rem;line-height:1.7;color:var(--ink);
+  border-left:3px solid var(--red);padding:4px 0 4px 18px;background:rgba(192,31,31,.045);}
+.specimen.is-gap .quote{border-left-color:var(--blue);background:rgba(31,78,121,.05);color:var(--ink-2);font-style:italic;}
+.specimen.is-caution .quote{border-left-color:var(--amber);background:rgba(122,79,12,.05);}
+.specimen .effect{font-size:1.08rem;color:var(--ink);}
+.specimen .counter{background:var(--paper);border:1px dashed var(--rule);padding:16px 18px;margin-top:4px;}
+.specimen .counter .k{color:var(--blue-ink);}
+.specimen .counter p{font-family:var(--doc);font-size:.95rem;line-height:1.65;}
+.specimen .copy{margin-top:14px;background:transparent;border:1.5px solid var(--ink);color:var(--ink);
+  font-family:var(--label);letter-spacing:.12em;text-transform:uppercase;font-size:12px;padding:9px 16px;cursor:pointer;transition:background .15s,color .15s;}
+.specimen .copy:hover{background:var(--ink);color:var(--paper-3);}
+
+/* --- errata: what Redline won't claim (the honesty block) --- */
+.errata{padding:78px 0;border-top:1px solid var(--edge);}
+.errata .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,64px);align-items:start;}
+.errata h2{font-family:var(--prose);font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1;}
+.errata h2 .ul{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px;text-decoration-thickness:2px;}
+.errata .lead{color:var(--ink-2);margin-top:16px;font-size:1.1rem;max-width:40ch;}
+.errata dl{border-top:2px solid var(--ink);}
+.errata div.e{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--rule);}
+.errata dt .x{width:24px;height:24px;}
+.errata dt .x path{stroke:var(--red);stroke-width:2.6;fill:none;stroke-linecap:round;}
+.errata .t{font-family:var(--prose);font-weight:700;font-size:1.18rem;}
+.errata .d{color:var(--ink-2);font-size:1.02rem;margin-top:3px;}
+
+/* --- close --- */
+.close{padding:92px 0 40px;border-top:1px solid var(--edge);text-align:center;background:
+  radial-gradient(120% 90% at 50% 120%,rgba(201,189,160,.55),transparent 60%);}
+.close h2{font-family:var(--doc);font-weight:700;font-size:clamp(1.9rem,3.6vw,3.2rem);line-height:1.12;letter-spacing:-0.02em;max-width:18ch;margin:0 auto 10px;}
+.close h2 .ink-red{color:var(--red);}
+.close p{color:var(--ink-2);max-width:46ch;margin:0 auto 30px;font-size:1.1rem;}
+.close .cta{font-size:16px;padding:16px 30px;}
+
+footer{border-top:1px solid var(--edge);}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0 40px;flex-wrap:wrap;}
+footer .sig{font-family:var(--label);letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:var(--ink-2);}
+footer .brand{font-size:16px;}
+
+/* --- responsive --- */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;}
+  .hero .pitch{max-width:none;}
+  .work .grid{grid-template-columns:1fr;}
+  .errata .wrap{grid-template-columns:1fr;gap:30px;}
+  .nav .txt{display:none;}
+}
+@media (max-width:560px){
+  body{font-size:17px;}
+  .masthead .wrap{padding-top:18px;}
+  .masthead .nav .cta{display:none;} /* hero CTA sits right below — no sticky overflow */
+  .brand{font-size:17px;letter-spacing:.24em;}
+  .proof{font-size:12.5px;}
+  .proof .row{grid-template-columns:40px 1fr;}
+  .proof .pen-flag{display:none;} /* avoid overlapping the sentence at phone width; circle + legend carry it */
+  .cta{padding:12px 18px;}
+  .close h2{font-size:1.75rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;}
+  .hero h1 .cut::after{transform:scaleX(1);}
+  .proof .circle ellipse{stroke-dashoffset:0;}
+  .proof .pen-flag,.proof .delete-mark{opacity:1;}
+}

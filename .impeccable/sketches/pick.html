@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redline — The Marked Galley</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Spectral+SC:wght@600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1440px;height:900px;overflow:hidden;}
+  body{background:#d9d2c0;font-family:'Courier Prime',monospace;color:#1a1a17;position:relative;}
+  body::before{content:"";position:absolute;inset:0;background:
+    repeating-linear-gradient(90deg,rgba(0,0,0,.015) 0 1px,transparent 1px 3px);pointer-events:none;}
+  header{position:absolute;top:40px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #1a1a17;padding-bottom:18px;z-index:4;}
+  .wm{font-family:'Spectral SC',serif;font-size:30px;letter-spacing:.3em;font-weight:600;}
+  .wm b{color:#c01f1f;}
+  .sub{font-size:13px;letter-spacing:.14em;margin-top:8px;color:#4a463c;}
+  .cta{border:2px solid #1a1a17;background:#c01f1f;color:#f3ead6;font-weight:700;font-size:15px;letter-spacing:.08em;padding:13px 22px;}
+  .cta+.fine{font-size:11px;margin-top:8px;text-align:right;color:#4a463c;}
+
+  h1{position:absolute;top:150px;left:64px;width:640px;font-family:'Courier Prime',monospace;font-weight:700;font-size:46px;line-height:1.12;z-index:4;}
+  h1 .strike{position:relative;color:#8a1616;}
+  h1 .strike::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:3px;background:#c01f1f;}
+  h1 .ins{color:#1f4e79;}
+
+  /* the galley column */
+  .galley{position:absolute;top:150px;right:64px;width:600px;height:680px;background:#efe9da;border:1px solid #b7ad93;box-shadow:0 16px 40px rgba(0,0,0,.25);padding:34px 30px 30px 58px;}
+  .galley .tag{position:absolute;top:10px;left:14px;font-family:'Spectral SC',serif;font-size:11px;letter-spacing:.28em;color:#7a7158;}
+  .row{position:relative;margin:0 0 17px;}
+  .row .ln{height:10px;background:#c9bf a5;border-radius:1px;}
+  .row .ln{height:10px;background:#cabfa3;border-radius:1px;}
+  .row .ln.w1{width:96%;}.row .ln.w2{width:88%;}.row .ln.w3{width:72%;}
+  /* margin marks */
+  .row .mk{position:absolute;left:-44px;top:-4px;color:#c01f1f;font-size:17px;font-weight:700;}
+  .row .mk.blue{color:#1f4e79;}
+  .row.hot .ln{background:#e4b3ab;}
+  .row.hot::after{content:"";position:absolute;left:-6px;right:-6px;top:-7px;bottom:-7px;border:2px solid #c01f1f;border-radius:4px;}
+  .flag{position:absolute;right:-18px;top:-30px;background:#c01f1f;color:#f3ead6;font-family:'Spectral SC',serif;font-size:12px;letter-spacing:.14em;padding:7px 13px;box-shadow:0 5px 12px rgba(0,0,0,.3);}
+  .flag small{display:block;font-size:10px;letter-spacing:.1em;opacity:.85;}
+
+  .legend{position:absolute;bottom:40px;left:64px;width:620px;display:flex;gap:30px;font-size:13px;color:#3a3630;z-index:4;}
+  .legend b{color:#c01f1f;} .legend .b{color:#1f4e79;}
+</style>
+</head>
+<body>
+  <header>
+    <div><div class="wm"><b>✎</b> REDLINE</div><div class="sub">THE CONTRACT, MARKED UP IN RED — LINE BY LINE</div></div>
+    <div><div class="cta">MARK UP MY CONTRACT ▸</div><div class="fine">Parsed in your browser. Never uploaded.</div></div>
+  </header>
+
+  <h1>The clause that<br>costs you is on<br><span class="strike">line nineteen.</span><br><span class="ins">We marked it.</span></h1>
+
+  <div class="galley">
+    <div class="tag">GALLEY PROOF — SERVICES AGREEMENT</div>
+    <div class="row"><span class="mk blue">¶</span><div class="ln w1"></div></div>
+    <div class="row"><div class="ln w2"></div></div>
+    <div class="row"><span class="mk">stet</span><div class="ln w3"></div></div>
+    <div class="row"><div class="ln w1"></div></div>
+    <div class="row hot"><span class="mk">⌦</span><div class="ln w1"></div>
+      <div class="flag">CRITICAL — WALK AWAY<small>Broad IP assignment</small></div></div>
+    <div class="row"><div class="ln w2"></div></div>
+    <div class="row"><span class="mk blue">△</span><div class="ln w1"></div></div>
+    <div class="row"><div class="ln w3"></div></div>
+    <div class="row"><span class="mk">⌦</span><div class="ln w2"></div></div>
+    <div class="row"><div class="ln w1"></div></div>
+    <div class="row"><div class="ln w2"></div></div>
+    <div class="row"><span class="mk blue">¶</span><div class="ln w3"></div></div>
+  </div>
+
+  <div class="legend">
+    <span><b>⌦ red</b> — a clause that can hurt you</span>
+    <span><span class="b">△ blue</span> — a protection that is missing</span>
+  </div>
+</body>
+</html>

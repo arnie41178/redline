@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redline — The Clause Field Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,800;1,500&family=Spectral+SC:wght@500;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1440px; height:900px; overflow:hidden; }
+  body {
+    font-family:'Spectral',Georgia,serif;
+    background:#14201b;
+    color:#f2ead6;
+    position:relative;
+  }
+  /* engraved case texture */
+  body::before{
+    content:"";position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(0deg, rgba(47,107,94,.05) 0 1px, transparent 1px 4px),
+      radial-gradient(120% 90% at 20% 0%, rgba(47,107,94,.18), transparent 60%);
+    pointer-events:none;
+  }
+  .frame{position:absolute;inset:22px;border:1px solid #2f6b5e;}
+  .frame::after{content:"";position:absolute;inset:6px;border:1px solid rgba(242,234,214,.22);}
+  header{position:absolute;top:46px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:flex-start;z-index:3;}
+  .wordmark{font-family:'Spectral SC','Spectral',serif;font-weight:600;font-size:30px;letter-spacing:.32em;color:#f2ead6;}
+  .wordmark .r{color:#b2341f;}
+  .kicker{font-family:'Spectral SC',serif;font-size:13px;letter-spacing:.42em;color:#8aa89b;margin-top:10px;}
+  .tray{text-align:right;}
+  .tray .cta{display:inline-block;background:#b2341f;color:#f2ead6;font-family:'Spectral SC',serif;letter-spacing:.14em;font-size:16px;padding:14px 26px;border:1px solid #e0b37a;}
+  .tray .fine{font-size:12px;color:#8aa89b;margin-top:9px;letter-spacing:.04em;}
+
+  .lede{position:absolute;top:150px;left:60px;width:560px;z-index:3;}
+  .lede h1{font-size:62px;line-height:1.02;font-weight:800;color:#f2ead6;}
+  .lede h1 em{font-style:italic;color:#c88a2e;}
+  .lede p{font-size:20px;line-height:1.5;color:#cfd8cf;margin-top:22px;max-width:470px;}
+
+  /* left: raw contract specimen sheet */
+  .sheet{position:absolute;left:60px;top:430px;width:470px;height:390px;background:#f2ead6;color:#2a2a24;padding:26px 28px;box-shadow:0 18px 40px rgba(0,0,0,.4);transform:rotate(-1.4deg);}
+  .sheet .lbl{font-family:'Spectral SC',serif;font-size:12px;letter-spacing:.3em;color:#7a6f52;}
+  .sheet .ln{height:9px;background:#cdbfa0;margin:13px 0;border-radius:2px;}
+  .sheet .ln.s{width:78%;} .sheet .ln.m{width:92%;} .sheet .ln.hot{background:#e7b7ac;position:relative;}
+  .sheet .ln.hot::after{content:"";position:absolute;right:-6px;top:-5px;width:14px;height:19px;border:2px solid #b2341f;border-radius:3px;}
+
+  /* right: the plated specimen */
+  .plate{position:absolute;right:60px;top:150px;width:600px;background:#f2ead6;color:#23221c;box-shadow:0 26px 60px rgba(0,0,0,.5);}
+  .plate .band{background:#b2341f;color:#f6ede0;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;font-family:'Spectral SC',serif;letter-spacing:.2em;font-size:15px;}
+  .plate .band .no{font-size:26px;letter-spacing:.05em;}
+  .plate .body{padding:26px 28px 30px;}
+  .plate .sci{font-style:italic;font-size:17px;color:#6b5e3c;}
+  .plate .name{font-size:38px;font-weight:800;line-height:1.05;margin:4px 0 16px;}
+  .engrave{height:150px;margin:6px 0 20px;border:1px solid #cbb98f;background:
+     repeating-linear-gradient(42deg,#d8c9a3 0 2px, #e9ddbd 2px 6px),
+     radial-gradient(60% 80% at 50% 40%, #b5a173, transparent 70%);
+     position:relative;}
+  .engrave::after{content:"❡ specimen plate";position:absolute;left:12px;bottom:8px;font-family:'Spectral SC',serif;font-size:11px;letter-spacing:.24em;color:#6b5e3c;}
+  .mark{border-left:3px solid #b2341f;padding:8px 0 8px 16px;margin-bottom:18px;}
+  .mark .cap{font-family:'Spectral SC',serif;font-size:12px;letter-spacing:.26em;color:#9a7a2e;margin-bottom:6px;}
+  .mark q{font-size:20px;line-height:1.4;font-style:italic;color:#2a2a22;}
+  .counter .cap{font-family:'Spectral SC',serif;font-size:12px;letter-spacing:.26em;color:#2f6b5e;margin-bottom:6px;}
+  .counter p{font-size:16px;line-height:1.5;color:#3a3a30;}
+
+  /* below-fold hint: ranked specimen drawer */
+  .drawer{position:absolute;left:60px;right:60px;bottom:40px;display:flex;gap:14px;z-index:3;}
+  .chip{flex:1;background:rgba(242,234,214,.07);border:1px solid #2f6b5e;padding:12px 14px;}
+  .chip .t{font-family:'Spectral SC',serif;font-size:12px;letter-spacing:.2em;}
+  .chip .c{font-size:13px;color:#9fb3a8;margin-top:5px;}
+  .chip.crit{border-color:#b2341f;} .chip.crit .t{color:#e49a86;}
+  .chip.caut .t{color:#d7a85a;} .chip.caut{border-color:#c88a2e;}
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <header>
+    <div>
+      <div class="wordmark"><span class="r">▰</span> R E D L I N E</div>
+      <div class="kicker">A FIELD GUIDE TO THE CLAUSES THAT BITE</div>
+    </div>
+    <div class="tray">
+      <span class="cta">TRY IT ON YOUR CONTRACT ▸</span>
+      <div class="fine">Parsed in your browser. The file never leaves your machine.</div>
+    </div>
+  </header>
+
+  <div class="lede">
+    <h1>Know which clause<br><em>draws blood</em><br>before you sign.</h1>
+    <p>Upload the contract. Redline plates every dangerous clause, names it, and quotes the exact sentence it came from.</p>
+  </div>
+
+  <div class="sheet">
+    <div class="lbl">EXHIBIT — SERVICES AGREEMENT, P.3</div>
+    <div class="ln m"></div><div class="ln s"></div>
+    <div class="ln hot"></div>
+    <div class="ln m"></div><div class="ln s"></div><div class="ln m"></div>
+    <div class="ln s"></div><div class="ln m"></div>
+  </div>
+
+  <div class="plate">
+    <div class="band"><span>CRITICAL · WALK AWAY</span><span class="no">№ 01</span></div>
+    <div class="body">
+      <div class="sci">Cessio proprietatis latissima</div>
+      <div class="name">Broad IP Assignment</div>
+      <div class="engrave"></div>
+      <div class="mark">
+        <div class="cap">DIAGNOSTIC — THE SENTENCE IT CAME FROM</div>
+        <q>“Contractor assigns all intellectual property, whether created before or during the engagement, to the Client.”</q>
+      </div>
+      <div class="counter">
+        <div class="cap">COUNTER-MOVE</div>
+        <p>Limit the assignment to deliverables made for this project; carve out pre-existing tools, templates, and portfolio.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer">
+    <div class="chip crit"><div class="t">№02 · UNCAPPED INDEMNITY</div><div class="c">Critical — exposure has no ceiling</div></div>
+    <div class="chip crit"><div class="t">№03 · NON-COMPETE</div><div class="c">Critical — forecloses your field</div></div>
+    <div class="chip caut"><div class="t">№04 · NET-60 TERMS</div><div class="c">Caution — adverse but bounded</div></div>
+    <div class="chip caut"><div class="t">GAP · NO LATE-FEE</div><div class="c">Not found in the document</div></div>
+  </div>
+</body>
+</html>
