@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redline: read the line that costs you before you sign</title>
+<meta name="description" content="Redline marks up the contract a client handed you: the clauses that can hurt you, ranked, each quoting the exact sentence it came from. Parsed in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,400;0,600;0,800;1,500&family=Spectral+SC:wght@500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- masthead -->
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="nib" viewBox="0 0 26 26" aria-hidden="true"><path d="M4 22 L16 6 l4 3 L8 25 Z M16 6 l3-4 3 2 -3 5"/><path d="M6 20 l3 2"/></svg>
+      Redline
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="txt" href="#worksheet">How it reads</a>
+      <a class="txt" href="#errata">What it won't do</a>
+      <a class="cta" href="#start">Mark up my contract
+        <svg class="arw" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="pitch">
+      <h1>Read the <span class="cut">one line</span><br>that <span class="ink-red">costs you</span><br>before you sign.</h1>
+      <p class="sub">A client hands you their contract. Redline marks it up the way a proofreader would. It ranks the clauses that can hurt you, worst first, and quotes the exact sentence each one came from. In this sample, that's the line we've circled.</p>
+      <div class="act">
+        <a class="cta" href="#start">Mark up my contract
+          <svg class="arw" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5"/></svg>
+        </a>
+        <span class="priv">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 11V8a6 6 0 1 1 12 0v3"/><rect x="4" y="11" width="16" height="10" rx="1"/></svg>
+          Parsed in your browser. The file never leaves your machine.
+        </span>
+      </div>
+    </div>
+
+    <!-- the galley proof -->
+    <figure class="galley" aria-label="A sample contract marked up by Redline">
+      <span class="tab">Galley proof</span>
+      <span class="sample">Sample contract</span>
+      <div class="proof">
+        <div class="row"><span class="ln"></span><span class="tx">4. ASSIGNMENT OF WORK. Contractor shall perform the</span></div>
+        <div class="row"><span class="ln"></span><span class="tx">services described in Exhibit A in a professional manner</span></div>
+        <div class="row"><span class="ln"></span><span class="tx faded">and in accordance with the agreed schedule.</span></div>
+        <div class="row flag crit"><span class="ln"></span><span class="tx"><mark>Contractor hereby assigns all intellectual property,</mark>
+          <svg class="circle" viewBox="0 0 150 46" aria-hidden="true"><ellipse cx="75" cy="23" rx="71" ry="20"/></svg>
+          <span class="pen-flag" style="top:-26px;">Critical: walk away ✕</span>
+        </span></div>
+        <div class="row flag crit"><span class="ln"></span><span class="tx"><mark>whether created before or during the engagement, to the Client.</mark></span></div>
+        <div class="row"><span class="ln"></span><span class="tx faded">5. PAYMENT. Client shall pay the fees set out in Exhibit B</span></div>
+        <div class="row"><span class="ln"></span><span class="tx faded">within sixty (60) days of invoice.</span>
+          <span class="pen-flag blue" style="top:2px;">Net-60: slow, but bounded</span></div>
+        <div class="row flag gaprow"><span class="ln"></span><span class="tx faded">6. TERMINATION. Either party may terminate on notice.</span>
+          <svg class="delete-mark" style="top:0;" viewBox="0 0 22 20" aria-hidden="true"><path class="mark-svg blue" d="M3 3l16 14M3 10h16"/></svg>
+          <span class="pen-flag blue" style="top:-22px;right:60px;">No kill fee → missing ↓</span>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="item"><span class="swatch"><svg viewBox="0 0 20 16" aria-hidden="true"><ellipse class="mark-svg" cx="10" cy="8" rx="8" ry="6"/></svg></span>A clause that can hurt you</span>
+        <span class="item"><span class="swatch"><svg viewBox="0 0 20 16" aria-hidden="true"><path class="mark-svg blue" d="M2 2l16 12M2 9h16"/></svg></span>A protection that's missing</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- worksheet: the product working -->
+<section class="work" id="worksheet">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Every flag points at the sentence it came from.</h2>
+      <p>Pick a finding. Redline shows you the exact words in your document, what they do to you, and language you can paste back to the client.</p>
+    </div>
+
+    <div class="grid">
+      <ul class="flaglist" role="tablist" aria-label="Findings in the sample contract">
+        <li><button role="tab" data-finding="ip" aria-selected="true" aria-controls="specimen">
+          <span class="no">01</span>
+          <span class="nm">Broad IP assignment</span>
+          <span class="tier critical">Critical</span>
+        </button></li>
+        <li><button role="tab" data-finding="indemnity" aria-selected="false" aria-controls="specimen">
+          <span class="no">02</span>
+          <span class="nm">Uncapped indemnity</span>
+          <span class="tier critical">Critical</span>
+        </button></li>
+        <li><button role="tab" data-finding="net60" aria-selected="false" aria-controls="specimen">
+          <span class="no">03</span>
+          <span class="nm">Net-60 payment terms</span>
+          <span class="tier caution">Caution</span>
+        </button></li>
+        <li><button role="tab" class="is-gap" data-finding="killfee" aria-selected="false" aria-controls="specimen">
+          <span class="no">—</span>
+          <span class="nm">No kill fee</span>
+          <span class="tier gap">Gap</span>
+        </button></li>
+      </ul>
+
+      <article class="specimen" id="specimen" role="tabpanel" aria-live="polite">
+        <!-- filled by main.js; default content below for no-JS -->
+        <div class="band"><span class="nm-band">Critical</span><span class="verdict">Walk away: don't sign without changing this</span></div>
+        <div class="body">
+          <p class="sci">The main risk for anyone who makes IP</p>
+          <h3 class="name">Broad IP assignment</h3>
+          <div class="field">
+            <div class="k">The sentence it came from</div>
+            <p class="quote">“Contractor hereby assigns all intellectual property, whether created before or during the engagement, to the Client.”</p>
+          </div>
+          <div class="field">
+            <div class="k">What it does to you</div>
+            <p class="effect">“Before or during” sweeps in work you made before this client existed, including your tools, templates and portfolio. You can't take it back later, which is why it's Critical.</p>
+          </div>
+          <div class="field counter">
+            <div class="k">Counter-offer you can paste</div>
+            <p>“Contractor assigns only the deliverables created specifically for this project. Pre-existing materials, tools, and templates remain Contractor's property, licensed to Client for use of the deliverables.”</p>
+            <button class="copy" type="button">Copy counter-offer</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- errata: what Redline won't claim -->
+<section class="errata" id="errata">
+  <div class="wrap">
+    <div>
+      <h2>What Redline <span class="ul">won't</span> tell you.</h2>
+      <p class="lead">Redline stays inside these limits on purpose, because a tool that guesses past them can get you hurt.</p>
+    </div>
+    <dl>
+      <div class="e">
+        <dt><svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></dt>
+        <dd><p class="t">Whether a clause holds up in court.</p><p class="d">Redline describes what a clause does to you, not whether it's enforceable where you live. That's a lawyer's call, and it says so.</p></dd>
+      </div>
+      <div class="e">
+        <dt><svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></dt>
+        <dd><p class="t">Scanned or photographed documents.</p><p class="d">It reads DOCX files and PDFs with a text layer. A citation drawn from misread text is worse than none, so it won't try to read images.</p></dd>
+      </div>
+      <div class="e">
+        <dt><svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></dt>
+        <dd><p class="t">Anything it can't quote.</p><p class="d">If Redline can't show you the exact sentence a flag rests on, it doesn't raise the flag.</p></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- close -->
+<section class="close" id="start">
+  <div class="wrap">
+    <h2>Mark it up before you <span class="ink-red">sign it.</span></h2>
+    <p>Drop in the contract. Redline reads it in your browser, flags the lines that can hurt you, and hands you the words to push back.</p>
+    <a class="cta" href="#worksheet">Mark up my contract
+      <svg class="arw" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="nib" viewBox="0 0 26 26" aria-hidden="true"><path d="M4 22 L16 6 l4 3 L8 25 Z M16 6 l3-4 3 2 -3 5"/><path d="M6 20 l3 2"/></svg>
+      Redline
+    </div>
+    <span class="sig">Mark up the contract before you sign it.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
