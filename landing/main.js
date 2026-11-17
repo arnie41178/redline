@@ -4,25 +4,25 @@
 const FINDINGS = {
   ip: {
     gap: false, tier: "Critical",
-    verdict: "Walk away — don't sign without changing this",
-    sci: "The flagship harm for anyone who makes IP",
+    verdict: "Walk away: don't sign without changing this",
+    sci: "The main risk for anyone who makes IP",
     name: "Broad IP assignment",
     quote: "“Contractor hereby assigns all intellectual property, whether created before or during the engagement, to the Client.”",
-    effect: "“Before or during” sweeps in work you made before this client existed — your tools, templates, and portfolio. You can't un-assign it later, which is what makes it Critical.",
+    effect: "“Before or during” sweeps in work you made before this client existed, including your tools, templates and portfolio. You can't take it back later, which is why it's Critical.",
     counter: "Contractor assigns only the deliverables created specifically for this project. Pre-existing materials, tools, and templates remain Contractor's property, licensed to Client for use of the deliverables."
   },
   indemnity: {
     gap: false, tier: "Critical",
-    verdict: "Walk away — don't sign without changing this",
+    verdict: "Walk away: don't sign without changing this",
     sci: "Dangerous because it has no ceiling",
     name: "Uncapped indemnity",
     quote: "“Contractor shall indemnify Client against all claims, losses, and expenses, notwithstanding the limitation of liability in Section 9.”",
-    effect: "The carve-out from the liability cap means your exposure has no top. One claim could cost more than the whole job paid — an unbounded tail, so it reads Critical.",
+    effect: "The carve-out from the liability cap means your exposure has no upper limit. One claim could cost more than the whole job paid, which is why it's Critical.",
     counter: "Contractor's indemnity is subject to the limitation of liability in Section 9, and in no event exceeds the total fees paid under this agreement."
   },
   net60: {
     gap: false, tier: "Caution",
-    verdict: "Adverse but bounded — raise it if you can",
+    verdict: "Adverse but bounded. Raise it if you can.",
     sci: "A real cost you can see the edge of",
     name: "Net-60 payment terms",
     quote: "“Client shall pay the fees set out in Exhibit B within sixty (60) days of invoice.”",
@@ -35,7 +35,7 @@ const FINDINGS = {
     sci: "A protection you expected that isn't here",
     name: "No kill fee",
     quote: "No clause in the document provides compensation for work in progress if the client terminates early.",
-    effect: "Termination is “on notice” with nothing owed for work already underway. You asked for a kill fee; the contract doesn't have one — so Redline reports it as a Gap, not a Flag.",
+    effect: "Termination is “on notice”, with nothing owed for work already underway. You asked for a kill fee and the contract doesn't have one, so Redline reports it as a Gap instead of a Flag.",
     counter: "If Client terminates for convenience, Client shall pay for all work performed through the termination date plus a cancellation fee of 25% of the remaining contract value."
   }
 };
