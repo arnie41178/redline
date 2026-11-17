@@ -62,6 +62,10 @@ in this list.
 
 Issues and specs live as markdown files under `.scratch/<feature-slug>/`. See `docs/agents/issue-tracker.md`.
 
+### Triage labels
+
+The five default triage roles, used as `Status:` values in `.scratch` ticket files. See `docs/agents/triage-labels.md`.
+
 ### Domain docs
 
 Single-context: `GLOSSARY.md` (lazily created) + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
